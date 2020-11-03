@@ -126,8 +126,8 @@ router.delete('/:id', ensureAuth, async (req, res) => {
 router.get('/user/:id', ensureAuth, async (req, res) => {
   try {
     const stories = await Story.find({
-      user: req.user.id,
-      // _id: req.user.id,
+       user: req.user._id,
+    
       status: 'public'
     })
       .populate('user')
@@ -144,8 +144,8 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
 router.get('/users/:id', ensureAuth, async (req, res) => {
   try {
     const stories = await Story.find({
-      users: req.user.id,
-      // _id: req.user.id,
+       users: req.user.id,
+       _id: req.user.id,
       status: 'public'
     })
       .populate('user')

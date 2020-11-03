@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const User = require('./user')
 const StorySchema = new mongoose.Schema({
   title:{
     type: String,
@@ -15,6 +15,7 @@ const StorySchema = new mongoose.Schema({
     default: 'public',
     enum: ['public', 'private']
   },
+  // user:User.schema,
   user:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'

@@ -1,8 +1,9 @@
-{{!-- {{#if expressFlash}}
-    <p><strong>FLASH!</strong> {{ expressFlash }}</p>
+
+
+{{#if error_msg  }}
+     <div class="alert alert-danger">{{error_msg}}</div>
 {{/if}}
-{{#if sessionFlash.message}}
-    <div class="{{ sessionFlash.type }}">
-        <strong>FLASH!</strong> {{ sessionFlash.message }}
-    </div>
-{{/if}} --}}
+
+{{#if success_msg }}
+  <div class="alert alert-success">{{success_msg}}</div>
+  {{/if}}
